@@ -35,6 +35,7 @@ body{
 #caltime{
     font-size: 8rem;
     color:white;
+    font-family: 'Courier New', Courier, monospace;
 } 
 #main{
     color:#36292c;
@@ -55,7 +56,7 @@ body{
         font-size:1.5rem;
     }
     #caltime{
-        font-size: 5rem;
+        font-size: 4rem;
         color:white;
     }
     #main{
