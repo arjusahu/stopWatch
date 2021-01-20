@@ -12,8 +12,11 @@ body{
     position:relative;
     background-color: black;
 }
+#laps{
+    font-size: 4rem;
+    color:silver;
+}
 .maindiv{
-    /* text-align: center; */
     height:100vh;
     width:100wh;
     display:flex;
@@ -27,6 +30,7 @@ body{
     width:13rem;
     border-radius: 2rem;
     box-shadow: .2rem .2rem 1rem white;
+    transition: width 1s,height 1s;
 }
 #caltime{
     font-size: 8rem;
@@ -39,9 +43,10 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom:8rem;
     text-shadow: .2rem .2rem .5rem white;
+    text-decoration: underline white;
 }
 
-@media screen and (max-width:500px){
+@media screen and (max-width:610px){
     .butn{
         margin:.1rem;
         height:3.5rem;

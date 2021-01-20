@@ -11,8 +11,15 @@ function func1() {
     button[1].disabled = true;
     button[2].addEventListener("click", stopevent);
     button[2].disabled = true;
+    button[3].addEventListener("click", laps);
+    button[3].disabled = true;
 }
 function startevnt() {
+    let main = document.getElementById("laps")
+    let lp1 = main.getElementsByTagName("div");
+    while (lp1[0]) {
+        lp1[0].parentNode.removeChild(lp1[0]);
+    }
     button[1].innerHTML = "Pause";
     evnt = setInterval(caltime, 10);
     function caltime() {
@@ -30,16 +37,17 @@ function startevnt() {
             h++;
         }
         time.innerHTML = (h < 10 ? "0" + h : h) + ":" + (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s) + ":" + (ms < 10 ? "0" + ms : ms);
-         button[0].disabled = true;
+        button[0].disabled = true;
         button[1].disabled = false;
         button[2].disabled = false;
+        button[3].disabled = false;
     }
 
 }
 function pause() {
     if (button[1].innerHTML == "Pause") {
-       clearInterval(evnt);
-       evnt=false;
+        clearInterval(evnt);
+        evnt = false;
         button[1].innerHTML = "continue";
     }
     else {
@@ -49,12 +57,20 @@ function pause() {
 }
 function stopevent() {
     clearInterval(evnt);
-    evnt=false;
+    evnt = false;
     m = 0, s = 0, h = 0;
     time.innerHTML = "00:00:00:00";
     button[0].disabled = false;
     button[1].disabled = true;
     button[2].disabled = true;
+    button[3].disabled = true;
+}
+function laps() {
+    let lp = document.getElementById("laps")
+    let varlaps = document.createElement("div");
+    varlaps.setAttribute("class", "lapstime");
 
+    varlaps.innerHTML = document.getElementById("caltime").innerHTML;
+    lp.appendChild(varlaps);
 }
 func1();
