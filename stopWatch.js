@@ -15,12 +15,16 @@ function func1() {
     button[3].disabled = true;
 }
 function startevnt() {
+    if (evnt==false)
+    {
     let main = document.getElementById("laps")
     let lp1 = main.getElementsByTagName("div");
     while (lp1[0]) {
         lp1[0].parentNode.removeChild(lp1[0]);
     }
+
     button[1].innerHTML = "Pause";
+}
     evnt = setInterval(caltime, 10);
     function caltime() {
         ms++;
@@ -47,7 +51,6 @@ function startevnt() {
 function pause() {
     if (button[1].innerHTML == "Pause") {
         clearInterval(evnt);
-        evnt = false;
         button[1].innerHTML = "continue";
     }
     else {
